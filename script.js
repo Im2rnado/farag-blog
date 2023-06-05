@@ -1,5 +1,5 @@
 // Initialize Firebase
-const firebaseConfig = {
+var firebaseConfig = {
   apiKey: "AIzaSyB0UZLhibh7v_Pdr8FumfRrqFFsGamTfF8",
   authDomain: "farag-blog.firebaseapp.com",
   projectId: "farag-blog",
@@ -9,11 +9,11 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+var db = firebase.firestore();
 
 // Function to render blogs
 function renderBlogs() {
-  const blogsContainer = document.getElementById('blogs-container');
+  var blogsContainer = document.getElementById('blogs-container');
   blogsContainer.innerHTML = '';
 
   db.collection('blogs')
@@ -21,26 +21,26 @@ function renderBlogs() {
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        const blog = doc.data();
+        var blog = doc.data();
 
-        const blogBox = document.createElement('div');
+        var blogBox = document.createElement('div');
         blogBox.classList.add('blog-box');
 
-        const blogDate = document.createElement('div');
+        var blogDate = document.createElement('div');
         blogDate.classList.add('blog-date');
         blogDate.innerText = blog.date;
 
-        const blogContent = document.createElement('div');
+        var blogContent = document.createElement('div');
         blogContent.innerText = blog.content;
 
-        const likeButton = document.createElement('button');
+        var likeButton = document.createElement('button');
         likeButton.classList.add('like-button');
         likeButton.innerHTML = '&#10084;';
         likeButton.addEventListener('click', () => {
           doc.ref.update({ likes: blog.likes + 1 });
         });
 
-        const blogLikes = document.createElement('span');
+        var blogLikes = document.createElement('span');
         blogLikes.classList.add('blog-likes');
         blogLikes.innerText = `Likes: ${blog.likes}`;
 
@@ -59,7 +59,7 @@ function renderBlogs() {
 
 // Function to add a new blog
 function addBlog(content) {
-  const date = new Date().toLocaleString();
+  var date = new Date().toLocaleString();
 
   db.collection('blogs')
     .add({
@@ -76,9 +76,9 @@ function addBlog(content) {
 }
 
 // Handle submit button click in admin page
-const submitButton = document.getElementById('submit-blog');
+var submitButton = document.getElementById('submit-blog');
 submitButton.addEventListener('click', () => {
-  const blogContent = document.getElementById('blog-text').value;
+  var blogContent = document.getElementById('blog-text').value;
   if (blogContent.trim() !== '') {
     addBlog(blogContent);
     document.getElementById('blog-text').value = '';
