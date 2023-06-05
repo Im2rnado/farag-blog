@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#blogs-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.blog-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.blog-likes {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.like-button {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+#blog-text {
+  width: 400px;
+  height: 200px;
+  display: block;
+  margin: 10px auto;
+}
+
+#submit-blog {
+  display: block;
+  margin: 0 auto;
+}
