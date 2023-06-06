@@ -35,7 +35,7 @@ h1 {
 .blog-date {
   font-size: 14px;
   color: #888;
-  margin-bottom: 10px;
+  margin-inline-start: auto;
 }
 
 .blog-title {
@@ -97,25 +97,22 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Mobile Optimization */
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 28px;
   }
 
-  .blog-box {
-    padding: 15px;
-    margin-bottom: 15px;
+  .blog-date {
+    font-size: 12px;
   }
 
   .blog-title {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .blog-content {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .like-button {
@@ -128,20 +125,13 @@ h1 {
 
   .admin-title {
     font-size: 16px;
-    margin-bottom: 5px;
   }
 
   .admin-input {
     font-size: 14px;
-    margin-bottom: 5px;
   }
 
   .admin-button {
     font-size: 14px;
-  }
-
-  .admin-box {
-    padding: 15px;
-    margin-bottom: 15px;
   }
 }
