@@ -30,7 +30,7 @@ function renderBlogs() {
         blogTitle.classList.add('blog-title')
         blogTitle.innerText = blog.title;
         
-        var blogDate = document.createElement('span');
+        var blogDate = document.createElement('div');
         blogDate.classList.add('blog-date');
         blogDate.innerText = blog.date;
         
@@ -48,8 +48,8 @@ function renderBlogs() {
         blogLikes.classList.add('blog-likes');
         blogLikes.innerText = `Likes: ${blog.likes}`;
 
-        blogBox.appendChild(blogDate);
         blogBox.appendChild(blogTitle);
+        blogBox.appendChild(blogDate);
         blogBox.appendChild(blogContent);
         blogBox.appendChild(likeButton);
         blogBox.appendChild(blogLikes);
