@@ -60,6 +60,13 @@ h1 {
   margin-bottom: 20px;
 }
 
+.admin-title {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
 .admin-input {
   width: 100%;
   padding: 10px;
