@@ -77,13 +77,15 @@ function addBlog(content) {
 
 // Handle submit button click in admin page
 var submitButton = document.getElementById('submit-blog');
+if (submitButton) { 
 submitButton.addEventListener('click', () => {
   var blogContent = document.getElementById('blog-text').value;
   if (blogContent.trim() !== '') {
     addBlog(blogContent);
     document.getElementById('blog-text').value = '';
   }
-});
+})
+}
 
 // Initial rendering of blogs
 renderBlogs();
