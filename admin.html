@@ -5,10 +5,16 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Admin Page</h1>
-  <textarea id="blog-title" placeholder="Type your title here"></textarea>
-  <textarea id="blog-text" placeholder="Type your blog here"></textarea>
-  <button id="submit-blog">Submit</button>
+  <div class="container">
+    <h1>Admin Page</h1>
+
+    <div class="admin-box">
+      <input id="blog-title" class="admin-title" type="text" placeholder="Enter blog title">
+      <input id="blog-text" class="admin-input" type="text" placeholder="Enter blog content">
+      <button id="submitButton" class="admin-button">Submit</button>
+    </div>
+
+  </div>
   
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
