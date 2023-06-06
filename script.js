@@ -30,6 +30,9 @@ function renderBlogs() {
         blogDate.classList.add('blog-date');
         blogDate.innerText = blog.date;
 
+        var blogTitle = document.createElement('div');
+        blogTitle.innerText = blog.title;
+        
         var blogContent = document.createElement('div');
         blogContent.innerText = blog.content;
 
@@ -45,6 +48,7 @@ function renderBlogs() {
         blogLikes.innerText = `Likes: ${blog.likes}`;
 
         blogBox.appendChild(blogDate);
+        blogBox.appendChild(blogTitle);
         blogBox.appendChild(blogContent);
         blogBox.appendChild(likeButton);
         blogBox.appendChild(blogLikes);
@@ -58,13 +62,14 @@ function renderBlogs() {
 }
 
 // Function to add a new blog
-function addBlog(content) {
+function addBlog(content, title) {
   var date = new Date().toLocaleString();
 
   db.collection('blogs')
     .add({
       date: date,
       content: content,
+      title, title,
       likes: 0,
     })
     .then(() => {
@@ -80,9 +85,11 @@ var submitButton = document.getElementById('submit-blog');
 if (submitButton) { 
 submitButton.addEventListener('click', () => {
   var blogContent = document.getElementById('blog-text').value;
+  var blogTitle = document.getElementById('blog-title').value;
   if (blogContent.trim() !== '') {
-    addBlog(blogContent);
+    addBlog(blogContent, blogTitle);
     document.getElementById('blog-text').value = '';
+    document.getElementById('blog-title').value = '';
   }
 })
 }
