@@ -1,48 +1,72 @@
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 h1 {
   text-align: center;
-}
-
-#blogs-container {
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .blog-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .blog-date {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
 }
 
-.blog-likes {
-  display: inline-block;
-  margin-right: 10px;
+.blog-content {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .like-button {
-  display: inline-block;
-  background-color: transparent;
+  border: none;
+  background: none;
+  color: #f00;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.blog-likes {
+  font-size: 14px;
+  color: #888;
+}
+
+.admin-page {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.admin-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
   border: none;
   cursor: pointer;
-  outline: none;
-}
-
-#blog-text {
-  width: 400px;
-  height: 200px;
-  display: block;
-  margin: 10px auto;
-}
-
-#submit-blog {
-  display: block;
-  margin: 0 auto;
 }
