@@ -25,6 +25,9 @@ function renderBlogs() {
 
         var blogBox = document.createElement('div');
         blogBox.classList.add('blog-box');
+        
+        var titleBox = document.createElement('div');
+        titleBox.classList.add('title-box');
 
         var blogTitle = document.createElement('div')
         blogTitle.classList.add('blog-title')
@@ -48,8 +51,9 @@ function renderBlogs() {
         blogLikes.classList.add('blog-likes');
         blogLikes.innerText = `Likes: ${blog.likes}`;
 
-        blogBox.appendChild(blogTitle);
-        blogBox.appendChild(blogDate);
+        blogBox.appendChild(titleBox);
+        titleBox.appendChild(blogTitle);
+        titleBox.appendChild(blogDate);
         blogBox.appendChild(blogContent);
         blogBox.appendChild(likeButton);
         blogBox.appendChild(blogLikes);
