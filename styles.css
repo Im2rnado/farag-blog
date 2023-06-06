@@ -90,3 +90,52 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Mobile Optimization */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .blog-box {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .blog-title {
+    font-size: 20px;
+  }
+
+  .blog-content {
+    font-size: 16px;
+  }
+
+  .like-button {
+    font-size: 20px;
+  }
+
+  .blog-likes {
+    font-size: 12px;
+  }
+
+  .admin-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .admin-input {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .admin-button {
+    font-size: 14px;
+  }
+
+  .admin-box {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+}
