@@ -26,13 +26,13 @@ function renderBlogs() {
         var blogBox = document.createElement('div');
         blogBox.classList.add('blog-box');
 
-        var blogDate = document.createElement('div');
-        blogDate.classList.add('blog-date');
-        blogDate.innerText = blog.date;
-        
         var blogTitle = document.createElement('div')
         blogTitle.classList.add('blog-title')
         blogTitle.innerText = blog.title;
+        
+        var blogDate = document.createElement('span');
+        blogDate.classList.add('blog-date');
+        blogDate.innerText = blog.date;
         
         var blogContent = document.createElement('div');
         blogContent.innerText = blog.content;
