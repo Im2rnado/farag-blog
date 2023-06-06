@@ -22,6 +22,7 @@ function renderBlogs() {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         var blog = doc.data();
+        doc.ref.update({ views: blog.views + 1 });
 
         var blogBox = document.createElement('div');
         blogBox.classList.add('blog-box');
@@ -43,20 +44,31 @@ function renderBlogs() {
         var likeButton = document.createElement('button');
         likeButton.classList.add('like-button');
         likeButton.innerHTML = '&#10084;';
-        likeButton.addEventListener('click', () => {
-          doc.ref.update({ likes: blog.likes + 1 });
-        });
 
         var blogLikes = document.createElement('span');
         blogLikes.classList.add('blog-likes');
         blogLikes.innerText = `Likes: ${blog.likes}`;
+        
+        likeButton.addEventListener('click', () => {
+          doc.ref.update({ likes: blog.likes + 1 });
+          blogLikes.innerText = `Likes: ${blog.likes + 1}`;
+        });
+        
+        const viewsCount = document.createElement('div');
+        viewsCount.classList.add('views-count');
+        viewsCount.textContent = (blog.views + 1) + ' Views';
+
+        const likeViewsContainer = document.createElement('div');
+        likeViewsContainer.classList.add('like-views-container');
+        likeViewsContainer.appendChild(likeButton);
+        likeViewsContainer.appendChild(blogLikes);
+        likeViewsContainer.appendChild(viewsCount);
 
         blogBox.appendChild(titleBox);
         titleBox.appendChild(blogTitle);
         titleBox.appendChild(blogDate);
         blogBox.appendChild(blogContent);
-        blogBox.appendChild(likeButton);
-        blogBox.appendChild(blogLikes);
+        blogBox.appendChild(likeViewsContainer);
 
         blogsContainer.appendChild(blogBox);
       });
@@ -76,6 +88,7 @@ function addBlog(content, title) {
       content: content,
       title, title,
       likes: 0,
+      views: 0,
     })
     .then(() => {
       renderBlogs();
