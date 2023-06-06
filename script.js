@@ -29,8 +29,9 @@ function renderBlogs() {
         var blogDate = document.createElement('div');
         blogDate.classList.add('blog-date');
         blogDate.innerText = blog.date;
-
-        var blogTitle = document.createElement('div');
+        
+        var blogTitle = document.createElement('div')
+        blogTitle.classList.add('blog-title')
         blogTitle.innerText = blog.title;
         
         var blogContent = document.createElement('div');
