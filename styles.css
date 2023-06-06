@@ -26,6 +26,12 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .blog-date {
   font-size: 14px;
   color: #888;
